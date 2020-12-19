@@ -1,7 +1,7 @@
 # Available validation rules
 
-- [ ] Accepted
-- [ ] Active URL
+- [x] Accepted
+- [x] Active URL
 - [ ] After (Date)
 - [ ] After Or Equal (Date)
 - [ ] Alpha
