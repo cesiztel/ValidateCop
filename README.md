@@ -1,0 +1,70 @@
+# Available validation rules
+
+- [ ] Accepted
+- [ ] Active URL
+- [ ] After (Date)
+- [ ] After Or Equal (Date)
+- [ ] Alpha
+- [ ] Alpha Dash
+- [ ] Alpha Numeric
+- [ ] Array
+- [ ] Bail
+- [ ] Before (Date)
+- [ ] Before Or Equal (Date)
+- [ ] Between
+- [ ] Boolean
+- [ ] Confirmed
+- [ ] Date
+- [ ] Date Equals
+- [ ] Date Format
+- [ ] Different
+- [ ] Digits
+- [ ] Digits Between
+- [ ] Dimensions (Images Files)
+- [ ] Distinct
+- [ ] Email
+- [ ] Ends With
+- [ ] Exclude If
+- [ ] Exclude Unless
+- [ ] Exists (Database)
+- [ ] File
+- [ ] Filled
+- [ ] Greater Than
+- [ ] Greater Than Or Equal
+- [ ] Image (File)
+- [ ] In
+- [ ] In Array
+- [ ] Integer
+- [ ] IP Address
+- [ ] JSON
+- [ ] Less Than
+- [ ] Less Than Or Equal
+- [ ] Max
+- [ ] MIME Types
+- [ ] MIME Type By File
+- [ ] Extension
+- [ ] Min
+- [ ] Multiple Of
+- [ ] Not In
+- [ ] Not Regx
+- [ ] Nullable
+- [ ] Numeric
+- [ ] Password
+- [ ] Present
+- [ ] Regular Expression
+- [ ] Required
+- [ ] Required If
+- [ ] Required Unless
+- [ ] Required With
+- [ ] Required With All
+- [ ] Required Without
+- [ ] Required Without All
+- [ ] Same
+- [ ] Size
+- [ ] Sometimes
+- [ ] Starts With
+- [ ] String
+- [ ] Timezone
+- [ ] Unique (Database)
+- [ ] URL
+- [ ] UUID
