@@ -5,16 +5,16 @@ using ValidateCop.Exceptions;
 namespace ValidateCop.Laws
 {
     /// <summary>
-    /// After (Date)
+    /// After (Date) or Equal
     ///
-    /// The field under validation must be a value after a given date. You may pass
-    /// as reference date the following values:
+    /// The field under validation must be a value after or equal 
+    /// a given date. You may pass as reference date the following values:
     ///
     /// - String human format date. Supported values: today, tomorrow
     /// - String date format: 12/5/2020. The date must be valid
     /// - Another date field
     /// </summary>
-    public static class AfterDateValidators
+    public static class AfterDateOrEqualValidators
     {
         public const string TODAY = "today";
         public const string TOMORROW = "tomorrow";
@@ -43,7 +43,7 @@ namespace ValidateCop.Laws
             return refDate;
         }
 
-        public static IRuleBuilderOptions<T, string> After<T>(this IRuleBuilder<T, string> ruleBuilder, string referenceDate)
+        public static IRuleBuilderOptions<T, string> AfterOrEqual<T>(this IRuleBuilder<T, string> ruleBuilder, string referenceDate)
         {
             return ruleBuilder.Must((rootObject, m, context) =>
             {
@@ -60,7 +60,7 @@ namespace ValidateCop.Laws
                 {
                     DateTime refDate = GetReferenceDateInDateFormat(referenceDate);
 
-                    if (originalDate.CompareTo(refDate) > 0)
+                    if (originalDate.CompareTo(refDate) >= 0)
                     {
                         return true;
                     }
@@ -75,7 +75,7 @@ namespace ValidateCop.Laws
             }).WithMessage("'{PropertyName}' should have a valid date. {ExceptionMessage}");
         }
 
-        public static IRuleBuilderOptions<T, DateTime> After<T>(this IRuleBuilder<T, DateTime> ruleBuilder, string referenceDate)
+        public static IRuleBuilderOptions<T, DateTime> AfterOrEqual<T>(this IRuleBuilder<T, DateTime> ruleBuilder, string referenceDate)
         {
             return ruleBuilder.Must((rootObject, m, context) =>
             {
@@ -83,7 +83,7 @@ namespace ValidateCop.Laws
                 {
                     DateTime refDate = GetReferenceDateInDateFormat(referenceDate);
 
-                    if (m.CompareTo(refDate) > 0)
+                    if (m.CompareTo(refDate) >= 0)
                     {
                         return true;
                     }
@@ -98,13 +98,13 @@ namespace ValidateCop.Laws
             }).WithMessage("'{PropertyName}' should have a valid date. {ExceptionMessage}");
         }
 
-        public static IRuleBuilderOptions<T, DateTime> After<T>(this IRuleBuilder<T, DateTime> ruleBuilder, DateTime referenceDate)
+        public static IRuleBuilderOptions<T, DateTime> AfterOrEqual<T>(this IRuleBuilder<T, DateTime> ruleBuilder, DateTime referenceDate)
         {
             return ruleBuilder.Must((rootObject, m, context) =>
             {
                 try
                 {
-                    if (m.CompareTo(referenceDate) > 0)
+                    if (m.CompareTo(referenceDate) >= 0)
                     {
                         return true;
                     }

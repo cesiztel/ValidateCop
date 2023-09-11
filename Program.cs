@@ -9,11 +9,15 @@ namespace ValidateCop
     {
         static void Main(string[] args)
         {
-            var registration = new Registration();
-            registration.termsAndConditionString = "no";
-            registration.termsAndConditionInt = 1;
-            registration.termsAndConditionBool = false;
-            registration.termsAndConditionURL = "whateverthingyIwant.net";
+            var registration = new Registration
+            {
+                TermsAndConditionString = "yes",
+                TermsAndConditionInt = 1,
+                TermsAndConditionBool = true,
+                TermsAndConditionURL = "php.net",
+                RegistrationDate = "12/21/2020 14:57:32.8",
+                Name = " Ceksksk333"
+            };
 
             RegistrationValidator validator = new RegistrationValidator();
 
@@ -31,20 +35,25 @@ namespace ValidateCop
 
     public class Registration
     {
-        public string termsAndConditionString { get; set; }
-        public int termsAndConditionInt { get; set; }
-        public bool termsAndConditionBool { get; set; }
-        public string termsAndConditionURL { get; set; }
+        public string TermsAndConditionString { get; set; }
+        public int TermsAndConditionInt { get; set; }
+        public bool TermsAndConditionBool { get; set; }
+        public string TermsAndConditionURL { get; set; }
+        public string RegistrationDate { get; set; }
+        public string Name { get; set; }
     }
 
     public class RegistrationValidator : AbstractValidator<Registration>
     {
         public RegistrationValidator()
         {
-            RuleFor(r => r.termsAndConditionString).Accepted();
-            RuleFor(r => r.termsAndConditionBool).Accepted();
-            RuleFor(r => r.termsAndConditionInt).Accepted();
-            RuleFor(r => r.termsAndConditionURL).ActiveURL();
+            RuleFor(r => r.TermsAndConditionString).Accepted();
+            RuleFor(r => r.TermsAndConditionBool).Accepted();
+            RuleFor(r => r.TermsAndConditionInt).Accepted();
+            RuleFor(r => r.TermsAndConditionURL).ActiveURL();
+            //RuleFor(r => r.RegistrationDate).After("12/21/2020 14:57:32.8");
+            RuleFor(r => r.RegistrationDate).AfterOrEqual("12/21/2020 14:57:32.8");
+            RuleFor(r => r.Name).Alpha();
         }
     }
 }

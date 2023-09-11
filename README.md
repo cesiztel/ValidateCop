@@ -2,9 +2,9 @@
 
 - [x] Accepted
 - [x] Active URL
-- [ ] After (Date)
-- [ ] After Or Equal (Date)
-- [ ] Alpha
+- [x] After (Date)
+- [x] After Or Equal (Date)
+- [x] Alpha
 - [ ] Alpha Dash
 - [ ] Alpha Numeric
 - [ ] Array
